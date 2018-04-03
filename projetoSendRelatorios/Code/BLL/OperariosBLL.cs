@@ -15,10 +15,10 @@ namespace projetoSendRelatorios.Code.BLL
 
         OperariosDAL operariosDal = new OperariosDAL();
 
-        public static List<string> buscaDadosDosOperarios(){
+        public static List<OperariosDTO> buscaDadosDosOperarios(){
 
             Console.WriteLine("Criando lista de operarios...\n");
-            List<string> nomeDosOperarios = new List<string>();
+            List<OperariosDTO> nomeDosOperarios = new List<OperariosDTO>();
 
             string db = "01";
             string collection = "Collection1";

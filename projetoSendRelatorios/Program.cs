@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using projetoSendRelatorios.Code.BLL;
+using projetoSendRelatorios.Code.DTO;
+using projetoSendRelatorios.Code;
 
 namespace projetoSendRelatorios
 {
@@ -12,20 +14,21 @@ namespace projetoSendRelatorios
         public static void Main(string[] args)
         {
 
-            List<string> nomeDosOperarios = OperariosBLL.buscaDadosDosOperarios();
+            List<OperariosDTO> nomeDosOperarios = OperariosBLL.buscaDadosDosOperarios();
 
-            nomeDosOperarios.ForEach(item =>
-            {
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.WriteLine(item);
-            });
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Black;
+            //nomeDosOperarios.ForEach(item =>
+            //{
+            //    Console.ForegroundColor = ConsoleColor.DarkBlue;
+            //    Console.WriteLine(item);
+            //});
+            //Console.WriteLine();
+			Console.ForegroundColor = ConsoleColor.Black;
 
+            sendReportsEmail.enviarEmail(nomeDosOperarios);
+			//chama a funcao de enviar emails
 
             Console.WriteLine("Processo finalizado!");
 
-            //chama a funcao de enviar email
 
 
             //termina de enviar relatorio

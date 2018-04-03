@@ -67,6 +67,18 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime" />
     <Reference Include="System.Transactions" />
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.2.0.2\lib\net45\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Security" />
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.2.0.2\lib\net45\MailKit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -75,6 +87,7 @@
     <Compile Include="Code\BLL\OperariosBLL.cs" />
     <Compile Include="Code\BLL\ConnectionString.cs" />
     <Compile Include="Code\DAL\OperariosDAL.cs" />
+    <Compile Include="Code\sendReportsEmail.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code\" />

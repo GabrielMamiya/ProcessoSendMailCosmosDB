@@ -10,9 +10,9 @@ namespace projetoSendRelatorios.Code.DAL
 {
     public class OperariosDAL
     {
-        public static List<string> buscaDadosOperariosNoBanco(string database,string collection){
+        public static List<OperariosDTO> buscaDadosOperariosNoBanco(string database,string collection){
 
-            List<string> nomeDosOperarios = new List<string>();
+            List<OperariosDTO> nomeDosOperarios = new List<OperariosDTO>();
 
             MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(BLL.ConnectionString.connectionString));
             settings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
@@ -37,7 +37,7 @@ namespace projetoSendRelatorios.Code.DAL
 
             operarios2.ForEach(item =>
             {
-                nomeDosOperarios.Add(item.Nome);
+                nomeDosOperarios.Add(item);
             });
             Console.WriteLine("Finalizando conexao com o banco e retornando itens...\n");
             return nomeDosOperarios;
